@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ConcertlistingComponent } from './components/concertlisting/concertlisting.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+  
+   {path: 'concerts', component: ConcertlistingComponent},
+   {path: '', redirectTo: 'concerts', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -1,0 +1,120 @@
+<div class="container">
+
+  <div class="row">
+    {{message}}
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let concert of listing" (click)="selectConcert(concert)">
+          {{concert.name}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <table class="table" *ngIf="selectedConcert">
+        <tr>
+          <td>Name</td>
+          <td>{{selectedConcert.name}}</td>
+        </tr>
+
+        <tr>
+          <td>Place</td>
+          <td>{{selectedConcert.place}}</td>
+        </tr>
+
+        <tr>
+          <td>Genre</td>
+          <td>{{selectedConcert.genre}}</td>
+        </tr>
+
+        <tr>
+          <td>Monday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.mom"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Tuesday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.tue"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Wednesday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.wed"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Thursday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.thu"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Friday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.fri"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Saturday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.sat"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Sunday</td>
+          <td>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item" *ngFor="let time of selectedConcert.runningTime.sun"><a class="page-link" href="#">{{time}}</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><a class='btn-primary' routerLink="/booking">Book Now</a></td>
+        </tr>
+
+        
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
