@@ -6,11 +6,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ConcertlistingComponent } from './components/concertlisting/concertlisting.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ConcertlistingComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    HttpClientModule,
+    NgModule
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

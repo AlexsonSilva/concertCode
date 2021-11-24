@@ -27,4 +27,13 @@ export class ConcertlistingComponent implements OnInit {
     })
 
   }
+
+  message: string = `No message yet`;
+  selectConcert(concert: Concert): void {
+
+    this.message = `Selecting the  concert: ${concert.name}`
+
+    this.selectedConcert = concert;
+    console.log('selecting a concert')
+  }
 }

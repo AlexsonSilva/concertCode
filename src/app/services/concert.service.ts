@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Concert } from '../models/concert';
@@ -15,6 +14,7 @@ export class ConcertService {
   getConcerts() : Observable<Concert[]>{
 
     const endpoint = `https://my-json-server.typicode.com/AlexsonSilva/music-concert/concerts`;
+    
 
     return this.http.get<Concert[]>(endpoint).pipe();
   }
